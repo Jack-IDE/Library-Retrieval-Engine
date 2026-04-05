@@ -1,0 +1,26 @@
+{
+  "supported_extensions": [
+    ".txt",
+    ".md",
+    ".py",
+    ".js",
+    ".json",
+    ".html",
+    ".css"
+  ],
+  "chunk_chars": 700,
+  "chunk_overlap": 120,
+  "default_top_k": 20,
+  "default_top_rerank": 5,
+  "default_passes": 2,
+  "project_pass": 3,
+  "features": [
+    "manual_labels",
+    "manual_candidate_builder",
+    "controller_state_trace",
+    "weighted_manual_training",
+    "checkpointed_ranker",
+    "vector_retrieval",
+    "compressor_model"
+  ]
+}
