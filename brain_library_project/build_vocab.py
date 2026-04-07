@@ -31,25 +31,16 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Must match brain_core/text_utils.py exactly so tokens are identical at
-# query time.
+# Import tokenizer and stopwords from the runtime package so vocab-building
+# stays aligned with query-time tokenization.
 # ─────────────────────────────────────────────────────────────────────────────
 
-TOKEN_RE = re.compile(r"[a-z0-9_']+")
-
-STOPWORDS = {
-    'the','a','an','and','or','to','of','in','on','for','with','is','are',
-    'was','were','be','by','it','this','that','as','at','from','into','if',
-    'then','than','can','will','would','should','could','we','you','they',
-    'he','she','them','our','your','their','but','not','do','does','did',
-    'so','such','via',
-}
+from brain_core.text_utils import STOPWORDS, tokenize
 
 # Extensions we'll read.  Anything else is silently skipped.
 TEXT_EXTENSIONS = {
@@ -58,10 +49,6 @@ TEXT_EXTENSIONS = {
     '.json', '.yaml', '.yml', '.toml', '.ini', '.cfg',
     '.sh', '.html', '.css', '.xml', '.csv',
 }
-
-
-def tokenize(text: str) -> List[str]:
-    return TOKEN_RE.findall(text.lower())
 
 
 # ─────────────────────────────────────────────────────────────────────────────

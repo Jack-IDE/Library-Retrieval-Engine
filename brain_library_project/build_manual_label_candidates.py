@@ -14,6 +14,7 @@ def main() -> None:
     parser.add_argument('--index', required=True)
     parser.add_argument('--queries', required=True, help='JSONL with query_id, query, guidance, split, task, difficulty')
     parser.add_argument('--output', required=True)
+    parser.add_argument('--library-id', default='', help='Optional hard library filter applied to every query candidate build')
     parser.add_argument('--top-k', type=int, default=8)
     args = parser.parse_args()
 
@@ -29,6 +30,8 @@ def main() -> None:
             query_id = str(obj.get('query_id', f'q{line_no:03d}'))
             query = str(obj['query'])
             guidance = parse_guidance(obj.get('guidance', {}))
+            if args.library_id:
+                guidance['library_id'] = args.library_id
             guidance_text = build_query_text('', guidance)
             split = str(obj.get('split', 'train'))
             task = str(obj.get('task', guidance.get('task', '')))
@@ -60,6 +63,7 @@ def main() -> None:
                     difficulty=difficulty,
                     rationale='',
                     source_type=item.chunk.source_type,
+                    library_id=item.chunk.library_id,
                     tags=list(guidance.get('required_terms', [])),
                 ))
     save_pairs_jsonl(args.output, pairs)
