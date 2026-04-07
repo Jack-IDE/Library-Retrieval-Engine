@@ -1,2 +1,0 @@
-Library input notes:
-Use plain text or code files. Keep one topic per file when possible. The interpreter works best when code and prose are separated into clear files instead of mixed into a single giant document.

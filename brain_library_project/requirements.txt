@@ -1,2 +1,0 @@
-# This project uses the Python standard library only for the default workflow.
-# Python 3.10+ recommended.
