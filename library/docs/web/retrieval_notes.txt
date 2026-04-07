@@ -1,0 +1,7 @@
+Retrieval notes:
+- Chunk documents by heading and paragraph windows.
+- Prefer narrow files with stable headings so reranking can isolate the right section.
+- For implementation questions, retrieve code + docs/specs together.
+- For conceptual questions, retrieve docs/specs first.
+- For debugging questions, favor docs/web/debugging_and_troubleshooting.md and any matching code module.
+- Retrieve top candidates, rerank them, compress top evidence, then answer from evidence with citations or structured output.

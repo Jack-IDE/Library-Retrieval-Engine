@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.5; color: #1a1a1a; background: #f7f7f7; }
+.site-header { position: sticky; top: 0; background: white; border-bottom: 1px solid #ddd; }
+.site-nav { display: flex; gap: 1rem; padding: 1rem; }
+.site-nav a { text-decoration: none; color: #222; font-weight: 600; }
+.page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.hero { padding: 4rem 0 2rem; }
+.contact-form { display: grid; gap: 0.75rem; max-width: 320px; }
+button { cursor: pointer; }

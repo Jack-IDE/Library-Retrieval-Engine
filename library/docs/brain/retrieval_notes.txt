@@ -1,0 +1,2 @@
+Retrieval notes:
+Chunk documents by heading and paragraph windows. Retrieve top candidates, rerank them, compress top evidence, then answer from evidence with citations.

@@ -1,0 +1,7 @@
+Library input notes:
+- Use plain text or code files.
+- Keep one topic per file when possible.
+- Keep code and prose separated into clear files instead of mixing them into one giant document.
+- Put implementation helpers in code/ so code-assistant queries can retrieve concrete snippets.
+- Put debugging patterns in their own page so troubleshooting queries do not have to infer from generic reference text.
+- Keep meta/project pipeline instructions out of the domain corpus unless the library itself is about the pipeline.
